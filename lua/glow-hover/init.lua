@@ -200,7 +200,7 @@ function M.hovehandler(markdown_lines, opts)
   tf:close()
   os.remove(tfn)
 
-  renderedLines = lsputil._trim(renderedLines)
+  renderedLines = lsputil.trim_empty_lines(renderedLines)
   opts = M.close_previous_previews(opts)
   return M.open_floating_term(renderedLines, opts)
 end
